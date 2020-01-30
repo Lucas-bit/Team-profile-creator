@@ -68,7 +68,7 @@ function appMenu() {
           if (pass) {
             return true;
           }
-          return "Please enter a positive number greater than zero.";
+          return "You must enter a positive number greater than zero.";
         }
       }
     ]).then(answers => {
@@ -127,9 +127,11 @@ function appMenu() {
           const pass = answer.match(
             /^[1-9]\d*$/ //regex, requiers that characters entered are a positive arabic numeral
           );
+          if (pass) {
+            return true;
           return "You musta positive number greater than zero.";
         }
-      },
+      }},
       {
         type: "input",
         name: "engineerEmail",
@@ -183,10 +185,11 @@ function appMenu() {
         validate: answer => {
           const pass = answer.match(
             /^[1-9]\d*$/
-          )
-          return "Please enter a positive number greater than zero.";
+          ); if (pass) {
+            return true;
         }
-      },
+        return "You must enter a positive number greater than zero.";
+      }},
       {
         type: "input",
         name: "internEmail",
@@ -221,7 +224,7 @@ function appMenu() {
   }
 
   function buildTeam() {
-    fs.writeFileSync(outputPath, render(teamMembers), "utf-8"); // function builTeam writes a file and pushes the render function into the team.html file
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8"); // function builTeam writes a file and passes the teamMembers array into the render function and into the team.html file (outputpath)
   }
 
   createManager();
