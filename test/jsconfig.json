@@ -1,0 +1,9 @@
+{
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}
+
+//includes tool tips (intelisense) for jest
