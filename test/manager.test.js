@@ -9,5 +9,9 @@ const Manager = require("../lib/Manager")
             )
         })
 
-        test("Manager Room Number")
+        test("Manager Office Number", () => {
+            expect(Consti.getOfficeNumber()).toEqual(
+                24
+            )
+        })
     })
