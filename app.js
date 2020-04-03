@@ -6,9 +6,10 @@ const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 
+const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.resolve(__dirname, "team.html");
 
-const render = require("./lib/htmlRenderer");
+const render = require('./lib/htmlRenderer');
 
 const teamMembers = [];
 const idArray = [];
@@ -223,13 +224,19 @@ function appMenu() {
     });
   }
 
-  function buildTeam() {
+  function buildTeam() {  
+    // Create the output directory if the output path doesn't exist
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR)
+    }
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8"); // function builTeam writes a file and passes the teamMembers array into the render function and into the team.html file (outputpath)
   }
 
   createManager();
 
 }
+
+
 
 
 appMenu(); //contains all of the create functions and is then called
