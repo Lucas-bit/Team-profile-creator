@@ -18,11 +18,11 @@ To launch the app run the following command in the terminal: node.exe app.js
 
 Upon launching the app, the user is asked to describe the first member of their team. The user enters the team member's name, selects that member's role from a list (options include "Engineer," "Intern," and "Manager), enters the member's ID (mus be an integer), enters the member's email address(must be an email address following the for@example.com format), and then must enter another piece of information that will differ depending on what role was selected. If "Engineer" was selected, the app asks the user for the team member's GitHub username; if "Intern" was selected, the member's school is requested.
 
-![](images/2020-04-03 (2).png)
+![](images/2020-04-03%20(2).png)
 
 When all information on the team member has been entered, the user is asked whether there are any more members they would like to add. If so, the user is asked the same questions about the new team member. If not, an HTML file is created with cards displaying the information on all the team members entered by the user in the "outputs" folder titled "team.html." 
 
-![](images/2020-04-03 (4).png) 
+![](images/2020-04-03%20(4).png) 
 
 # Techniques and Technologies Used
 This app was created using Object-Oriented Programming concepts, namely using classes and constructors to create "team member" objects based on information entered by the user. The app is run using Node.js, and uses the "Inquirer" and "FS" node modules. Files for different objects are also stored in separate .js files and passed among one another using module.exports and require.
